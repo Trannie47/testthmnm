@@ -9,17 +9,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout source code
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      # Step 2: Upload via FTP
       - name: Upload via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.2
         with:
-          server: ${{ secrets.SOMEE_FTP_HOST }}
-          username: ${{ secrets.SOMEE_FTP_USER }}
-          password: ${{ secrets.SOMEE_FTP_PASS }}
-          local-dir: ./
-          server-dir: /www.huyentrangtest.somee.com 
+          server: ${{ secrets.SOMEE_FTP_HOST }}    # Host FTP
+          username: ${{ secrets.SOMEE_FTP_USER }}  # Username FTP
+          password: ${{ secrets.SOMEE_FTP_PASS }}  # Password FTP
+          local-dir: ./publish                       # Folder chứa file web
+          server-dir: /www.huyentrangtest.somee.com  # Thư mục trên server
           protocol: ftp
           port: 21
           log-level: verbose
