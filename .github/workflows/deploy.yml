@@ -1,0 +1,22 @@
+name: Deploy to Somee
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.2
+        with:
+          server: ${{ secrets.SOMEE_FTP_HOST }}
+          username: ${{ secrets.SOMEE_FTP_USER }}
+          password: ${{ secrets.SOMEE_FTP_PASS }}
+          local-dir: ./publish
+          server-dir: /
