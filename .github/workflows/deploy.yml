@@ -19,4 +19,4 @@ jobs:
           username: ${{ secrets.SOMEE_FTP_USER }}
           password: ${{ secrets.SOMEE_FTP_PASS }}
           local-dir: ./publish
-          server-dir: /
+          server-dir: /www.huyentrangtest.somee.com 
