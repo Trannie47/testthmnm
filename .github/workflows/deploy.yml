@@ -18,5 +18,9 @@ jobs:
           server: ${{ secrets.SOMEE_FTP_HOST }}
           username: ${{ secrets.SOMEE_FTP_USER }}
           password: ${{ secrets.SOMEE_FTP_PASS }}
-          local-dir: ./publish
+          local-dir: ./
           server-dir: /www.huyentrangtest.somee.com 
+          protocol: ftp
+          port: 21
+          log-level: verbose
+          timeout: 180000
