@@ -6,21 +6,42 @@
     <title>Giới thiệu</title>
     <style>
         body {
-            background-color: #222;
             color: #fff;
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             text-align: center;
-            padding-top: 100px;
+            padding-top: 50px;
+            transition: background-color 0.5s;
         }
         a {
             color: cyan;
             font-size: 20px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+        }
+        #timestamp {
+            font-weight: bold;
+            color: yellow;
         }
     </style>
 </head>
 <body>
     <h1>Trang Giới Thiệu</h1>
     <p>Đây là trang thứ 2 để bạn upload lên GitHub.</p>
+    <p id="timestamp"></p>
+    <h2 style="color: yellow;">Test update từ GitHub</h2>
     <a href="index.html">Quay lại trang chủ</a>
+
+    <script>
+        // Thay đổi màu nền ngẫu nhiên mỗi lần load
+        const colors = ['#222', '#444', '#555', '#666', '#777', '#003366', '#005500'];
+        document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+        // Hiển thị timestamp
+        document.getElementById("timestamp").innerText = "Lần cập nhật mới nhất: " + new Date().toLocaleString();
+    </script>
 </body>
 </html>
